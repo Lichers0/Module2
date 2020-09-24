@@ -1,0 +1,2 @@
+class UserTestLink < ApplicationRecord
+end
