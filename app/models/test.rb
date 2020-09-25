@@ -2,11 +2,10 @@ class Test < ApplicationRecord
   # belongs_to :category
 
   def self.list_by_category(category_title)
-    # В замечании к прошлому заданяю меня попросили убрать связи из модели
-    # по этой причине не использую 'joins'
-    current_category = Category.find_by(title: category_title)
-    return Test.where(category_id: current_category.id).order(title: :desc).pluck(:title) if current_category
-    []
+    joins("INNER JOIN categories ON tests.category_id = categories.id").
+      where("categories.title = ? ", category_title ).
+      order("tests.title DESC").
+      pluck("tests.title")
   end
 
 end

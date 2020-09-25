@@ -1,6 +1,6 @@
-class CreateUserTestLinks < ActiveRecord::Migration[6.0]
+class CreateResults < ActiveRecord::Migration[6.0]
   def change
-    create_table :user_test_links do |t|
+    create_table :results do |t|
       t.references :user, null: false, foreign_key: true
       t.references :test, null: false, foreign_key: true
       t.timestamps
