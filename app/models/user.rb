@@ -4,7 +4,6 @@ class User < ApplicationRecord
   has_many :tests_authors, class_name: "Test", foreign_key: :author_id, dependent: :destroy
 
   def linking_tests(level)
-    Test.joins(:results).
-        where(results: { user_id: id }, level: level)
+    Test.joins(:results).where(level: level)
   end
 end
