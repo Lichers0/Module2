@@ -4,12 +4,21 @@ class Test < ApplicationRecord
   has_many :questions, dependent: :destroy
   has_many :results, dependent: :destroy
   has_many :users, through: :results, dependent: :destroy
+  validates :title, presence: true, uniqueness: { scope: :level}
+  validates :level, numericality: { only_integer:  true, greater_than_or_equal_to: 0}
 
-  def self.list_by_category(category_title)
+  scope :easy,    -> { where(level: 0..1) }
+  scope :middle,  -> { where(level: 2..4) }
+  scope :hard,    -> { where(level: 5..Float::INFINITY) }
+
+  scope :list_by_category, ->(category_title) do
     joins(:category).
       where(categories: { title: category_title }).
-      order("tests.title DESC").
-      pluck("tests.title")
+      order("tests.title DESC")
   end
 
+  def self.list_by_category_name(category_title)
+    list_by_category(category_title).
+      pluck("tests.title")
+  end
 end
