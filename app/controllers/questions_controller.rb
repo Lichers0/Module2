@@ -2,30 +2,25 @@ class QuestionsController < ApplicationController
   rescue_from 'ActiveRecord::RecordNotFound', with: :question_not_found
 
   before_action :find_test, only: [:index, :show, :create]
+  before_action :find_question, only: [:destroy, :show]
 
   def index
     render json: @test.questions
   end
 
   def show
-    render json: @test.questions.find(params[:id])
+    render json: @question
   end
 
-  def new
-  end
-
+  def new; end
 
   def create
-    question = Question.create(question_params)
-    @test.questions << question
-    @test.question
-    @test.save
+    @test.questions.create!(question_params)
     render plain: "Created", status: 202
   end
 
-  def delete
-    question = Question.find(params[:id])
-    question.destroy
+  def destroy
+    @question.destroy
     render plain: "Deleted", status: 202
   end
 
@@ -33,6 +28,10 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:body)
+  end
+
+  def find_question
+    @question = Question.find(params[:id])
   end
 
   def find_test
