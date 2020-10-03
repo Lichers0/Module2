@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   rescue_from 'ActiveRecord::RecordNotFound', with: :question_not_found
 
-  before_action :find_test, only: [:index, :show, :create]
+  before_action :find_test, only: [:index, :show, :create, :new]
   before_action :find_question, only: [:destroy, :show]
 
   def index
