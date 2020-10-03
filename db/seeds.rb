@@ -6,23 +6,23 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create!([{ name: 'Pasha' }, { name: 'Sasha' }])
+users = User.create!([{ name: 'Pasha' }, { name: 'Sasha' }])
 
 categories = Category.create!([
   { title: 'History' },
   { title: 'Maths' }])
 
-test = Test.create!(title: 'Addition', level: 0, category_id: categories[1].id)
+test = Test.create!(title: 'Addition', level: 0, category: categories[1], author: users[0])
 questions = Question.create!([
-  { body: '2+2=', test_id: test.id },
-  { body: '5+5=', test_id: test.id }])
+  { body: '2+2=', test: test },
+  { body: '5+5=', test: test }])
 Answer.create!([
-  { body: '1', correct: false, question_id: questions[0].id },
-  { body: '2', correct: false, question_id: questions[0].id },
-  { body: '3', correct: false, question_id: questions[0].id },
-  { body: '4', correct: true, question_id: questions[0].id }])
+  { body: '1', correct: false, question: questions[0] },
+  { body: '2', correct: false, question: questions[0] },
+  { body: '3', correct: false, question: questions[0] },
+  { body: '4', correct: true, question: questions[0] }])
 Answer.create!([
-  { body: '1', correct: false, question_id: questions[1].id },
-  { body: '4', correct: false, question_id: questions[1].id },
-  { body: '5', correct: false, question_id: questions[1].id },
-  { body: '10', correct: true, question_id: questions[1].id }])
+  { body: '1', correct: false, question: questions[1] },
+  { body: '4', correct: false, question: questions[1] },
+  { body: '5', correct: false, question: questions[1] },
+  { body: '10', correct: true, question: questions[1] }])
