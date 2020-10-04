@@ -1,0 +1,18 @@
+<h1>Show:</h1>
+<table>
+  <tr>
+    <th>id: </th>
+    <td><%=@test.id %></td>
+  </tr>
+  <tr>
+    <th>Title: </th>
+    <td><%=@test.title %></td>
+  </tr>
+</table>
+
+<%= link_to "edit", edit_test_path(@test) %>
+
+<%= render "questions/questions" %>
+
+<br><br>
+<%= link_to "back", tests_path %>

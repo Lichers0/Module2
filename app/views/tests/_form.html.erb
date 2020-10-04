@@ -1,0 +1,20 @@
+<!--Local: true skip turbolinks-->
+
+<%=form_with(model: @test, local: true) do |f| %>
+  <%= render "shared/errors", resource: @test %>
+  <div class="field">
+    <%=f.label :title %>
+    <%=f.text_field :title %>
+  </div>
+  <div class="field">
+    <%=f.label :level %>
+    <%=f.number_field :level %>
+  </div>
+  <div class="field">
+    <%=f.label :category_id %>
+    <%=f.collection_select :category_id, Category.all, :id, :title, prompt: true %>
+  </div>
+  <div class="actions">
+    <%=f.submit %>
+  </div>
+<% end %>
