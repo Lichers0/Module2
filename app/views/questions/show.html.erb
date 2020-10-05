@@ -1,0 +1,14 @@
+<h1>Show:</h1>
+<table>
+  <tr>
+    <th>id: </th>
+    <td><%=@question.id %></td>
+  </tr>
+  <tr>
+    <th>Body: </th>
+    <td><%=@question.body %></td>
+  </tr>
+</table>
+
+<%= link_to "edit", edit_question_path(@question) %>
+<%= link_to "back", test_path(@question.test) %>
