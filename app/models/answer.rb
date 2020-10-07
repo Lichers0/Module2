@@ -3,9 +3,9 @@ class Answer < ApplicationRecord
   belongs_to :question
 
   validates :body, presence: true
-  validates :correct_count_answer_by_question, if: :question, on: :create
+  # validates :correct_count_answer_by_question, if: :question, on: :create
 
-  scope :right_only, -> { where(correct: true) }
+  scope :correct, -> { where(correct: true) }
 
   private
 
