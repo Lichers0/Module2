@@ -16,5 +16,7 @@
     </p>
   <% end %>
 
+  <p>Current question: <%=@test_passage.index_current_question %></p>
+  <p>Total question: <%=@test_passage.total_test_questions %></p>
   <p><%= form.submit "Next" %></p>
 <% end %>

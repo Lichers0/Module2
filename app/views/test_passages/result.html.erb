@@ -1,1 +1,8 @@
 <h1>The <%= @test_passage.test.title %> Test was Completed!</h1>
+<% if @test_passage.passed? %>
+  <p>Test passed <span class="success"> <%= @test_passage.current_test_level %> </span></p>
+<% else %>
+  <p>Test didn't pass <span class="fail"> <%= @test_passage.current_test_level %> </span></p>
+<% end %>
+
+<%= link_to "To Test List", tests_path %>
