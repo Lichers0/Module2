@@ -27,7 +27,8 @@ class TestPassage < ApplicationRecord
   end
 
   def index_current_question
-    test.questions.index(current_question) + 1
+    # test.questions.index(current_question) + 1
+    test.questions.order(:id).where('id <= ?', current_question.id).count
   end
 
   def total_test_questions
