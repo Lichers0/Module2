@@ -1,6 +1,8 @@
 class TestsController < ApplicationController
+
+  before_action :authenticate_user!
   before_action :find_test, only: %i[show update edit destroy start]
-  before_action :set_user, only: :start
+  before_action :find_user, only: :start
 
   def index
     @tests = Test.all
@@ -51,7 +53,7 @@ class TestsController < ApplicationController
     params.require(:test).permit(:title, :level)
   end
 
-  def set_user
+  def find_user
     @user = User.first
   end
 end
