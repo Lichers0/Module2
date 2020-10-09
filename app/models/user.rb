@@ -1,5 +1,10 @@
 class User < ApplicationRecord
 
+  validates :email,
+            presence: true,
+            uniqueness: true,
+            format: { with: URI::MailTo::EMAIL_REGEXP }
+
   has_many :test_passages, dependent: :destroy
   has_many :tests, through: :test_passages, dependent: :destroy
   has_many :tests_authors, class_name: "Test", foreign_key: :author_id, dependent: :destroy
