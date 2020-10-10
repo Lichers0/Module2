@@ -13,8 +13,9 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user&.authenticate(params[:password])
       session[:user_id] = user.id
-      # redirect_to tests_path
-      redirect_to session[:auth_redirect] || root_path
+      redirect_url = session[:auth_redirect]
+      session.delete(:auth_redirect)
+      redirect_to redirect_url || root_path
     else
       flash[:alert] = "Verify your Email and Password please."
       redirect_to login_path
