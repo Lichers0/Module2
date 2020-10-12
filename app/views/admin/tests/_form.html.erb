@@ -1,6 +1,6 @@
 <!--Local: true skip turbolinks-->
 
-<%=form_with(model: @test, local: true) do |f| %>
+<%=form_with model: [:admin, @test], local: true do |f| %>
   <%= render "shared/errors", resource: @test %>
   <div class="field">
     <%=f.label :title %>

@@ -1,4 +1,4 @@
-class AnswersController < ApplicationController
+class Admin::AnswersController < Admin::ApplicationController
   before_action :find_answer, only: %i[show edit update destroy]
   before_action :find_question, only: %i[new create]
 
@@ -13,9 +13,9 @@ class AnswersController < ApplicationController
   # POST /answers
   # POST /answers.json
   def create
-    @answer = Answer.new(answer_params)
+    @answer = @question.answer.build(answer_params)
     if @answer.save
-      redirect_to @answer, notice: 'Answer was successfully created.'
+      redirect_to [:admin, @question], notice: 'Answer was successfully created.'
     else
       render :new
     end
@@ -23,15 +23,15 @@ class AnswersController < ApplicationController
 
   def update
     if @answer.update(answer_params)
-      redirect_to @answer, notice: 'Answer was successfully created.'
+      redirect_to [:admin, @answer.question], notice: 'Answer was successfully updated.'
     else
-      render :new
+      render :edit
     end
   end
 
   def destroy
     @answer.destroy
-    redirect_to @answer.question
+    redirect_to [:admin, @answer.question], notice: 'Answer was successfully deleted.'
   end
 
   private
