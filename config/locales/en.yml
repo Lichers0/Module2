@@ -2,7 +2,22 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  helpers:
+    submit:
+      test:
+        create: "Create test"
+        update: "Update test"
+    label:
+      test:
+        title: "Title_"
+        level: "Level_"
+        category_id: "Category_"
   test:
     index:
       header: "Available tests"
-
+  admin:
+    tests:
+      create:
+        success: "Test was successfully created."
+      index:
+        header: "Available tests"

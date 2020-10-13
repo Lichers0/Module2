@@ -1,4 +1,20 @@
 ru:
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+    label:
+      test:
+        title: "Заголовок"
+        level: "Уровень"
+        category_id: "Категория"
   test:
     index:
       header: "Доступные тесты"
+  admin:
+    tests:
+      create:
+        seccess: "Тест создан"
+      index:
+        header: "Доступные тесты"
