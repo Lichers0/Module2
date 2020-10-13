@@ -12,12 +12,25 @@ en:
         title: "Title_"
         level: "Level_"
         category_id: "Category_"
+  shared:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+
   test:
     index:
       header: "Available tests"
+  test_passages:
+    result:
+      header: "Test %{title} success!"
   admin:
     tests:
       create:
         success: "Test was successfully created."
       index:
         header: "Available tests"
+
+  tests_mailer:
+    completed_test:
+      subject: "You just completes the TestGuru test!"
