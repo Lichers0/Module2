@@ -1,0 +1,28 @@
+<h1>Show:</h1>
+<table>
+  <tr>
+    <th>id: </th>
+    <td><%=@test.id %></td>
+  </tr>
+  <tr>
+    <th>Title: </th>
+    <td><%=@test.title %></td>
+  </tr>
+</table>
+
+<%= link_to "edit", edit_admin_test_path(@test) %>
+
+<h1>Questions:</h1>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Body</th>
+    <th colspan="3">Action</th>
+  </tr>
+  <%= render @test.questions %>
+  <%#= render partial: "questions/question", collection: @test.questions %>
+</table>
+<%= link_to "new question", new_admin_test_question_path(@test) %>
+
+<br><br>
+<%= link_to "back", admin_tests_path %>

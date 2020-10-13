@@ -1,23 +1,9 @@
 class ApplicationController < ActionController::Base
 
+  protect_from_forgery with: :exception
   before_action :authenticate_user!
-  helper_method :current_user,
-                :logged_in?
 
-  private
-
-  def authenticate_user!
-    unless current_user
-      session[:auth_redirect] = request.path
-      redirect_to login_path, alert: "Need to login."
-    end
-  end
-
-  def current_user
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]
-  end
-
-  def logged_in?
-    current_user.present?
+  def after_sign_in_path_for(resource)
+    resource.admin? ? admin_tests_path : super
   end
 end
