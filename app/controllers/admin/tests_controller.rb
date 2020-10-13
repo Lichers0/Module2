@@ -1,4 +1,4 @@
-class Admin::TestsController < Admin::ApplicationController
+class Admin::TestsController < Admin::BaseController
 
   before_action :find_test, only: %i[show update edit destroy start]
 
@@ -34,11 +34,6 @@ class Admin::TestsController < Admin::ApplicationController
   def destroy
     @test.destroy
     redirect_to test_path
-  end
-
-  def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
   end
 
   private

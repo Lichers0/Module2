@@ -1,4 +1,4 @@
-class Admin::QuestionsController < Admin::ApplicationController
+class Admin::QuestionsController < Admin::BaseController
   rescue_from 'ActiveRecord::RecordNotFound', with: :question_not_found
 
   before_action :find_test, only: [:index, :create, :new]
