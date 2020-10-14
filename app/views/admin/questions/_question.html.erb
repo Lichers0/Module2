@@ -1,10 +1,10 @@
 <tr>
   <td><%= question.id  %></td>
   <td><%= question.body %></td>
-  <td><%= link_to :show, admin_question_path(question)  %></td>
-  <td><%= link_to :edit, edit_admin_question_path(question) %></td>
-  <td><%= link_to :delete,
+  <td><%= link_to t("common.show"), admin_question_path(question)  %></td>
+  <td><%= link_to t("common.edit"), edit_admin_question_path(question) %></td>
+  <td><%= link_to t("common.delete"),
                   admin_question_path(question),
                   method: :delete,
-                  data: { confirm: "Are you sure?" }  %></td>
+                  data: { confirm: t("common.r_u_sure") }  %></td>
 </tr>

@@ -1,4 +1,4 @@
-class Admin::QuestionsController < Admin::ApplicationController
+class Admin::QuestionsController < Admin::BaseController
   rescue_from 'ActiveRecord::RecordNotFound', with: :question_not_found
 
   before_action :find_test, only: [:index, :create, :new]
@@ -15,7 +15,7 @@ class Admin::QuestionsController < Admin::ApplicationController
   def create
     @question = @test.questions.build(question_params)
     if @question.save
-      redirect_to [:admin, @question], notice: 'Question was successfully created.'
+      redirect_to [:admin, @question]
     else
       render :new
     end
@@ -25,7 +25,7 @@ class Admin::QuestionsController < Admin::ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to [:admin, @question], notice: 'Question was successfully updated.'
+      redirect_to [:admin, @question]
     else
       render :edit
     end
@@ -33,7 +33,7 @@ class Admin::QuestionsController < Admin::ApplicationController
 
   def destroy
     @question.destroy
-    redirect_to [:admin, @question.test], notice: 'Question was successfully deleted.'
+    redirect_to [:admin, @question.test]
   end
 
   private

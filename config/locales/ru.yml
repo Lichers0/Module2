@@ -1,0 +1,72 @@
+ru:
+  common:
+    show: "Показать"
+    edit: "Редактировать"
+    delete: "Удалить"
+    back: "Назад"
+    r_u_sure: "Уверен?"
+    title: "Заголовок"
+    count_questions: "Кол-во вопросов"
+    action: "Действия"
+    question: "Вопрос"
+    new: "Новый"
+
+  helpers:
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+    label:
+      test:
+        title: "Заголовок"
+        level: "Уровень"
+        category_id: "Категория"
+    select:
+      prompt: "Выбери категорию..."
+  shared:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибк"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+  test:
+    index:
+      header: "Доступные тесты"
+  test_passages:
+    result:
+      header: "Тест %{title} успешно завершен!"
+  admin:
+    tests:
+      create:
+        seccess: "Тест создан"
+      index:
+        header: "Доступные тесты"
+        new_test: "Новый Test"
+      new:
+        new_test: "Новый тест"
+      show:
+        questions: "Вопросы"
+        body: "Текст"
+        new_question: "Новый вопрос"
+      edit:
+        edit: "Редактировать"
+    questions:
+      show:
+        answers: "Ответы"
+        new_answer: "Новый ответ"
+    answers:
+      new:
+        new_answer: "Новый ответ"
+      edit:
+        edit_answer: "Редактируем ответ"
+      show:
+        answer: "Ответ"
+        correct: "Правильный"
+  users:
+    sessions:
+      welcome: "Привет, %{name}"
+
+  tests_mailer:
+    completed_test:
+      subject: "Вы успешно завершили тест на TestGuru!"
