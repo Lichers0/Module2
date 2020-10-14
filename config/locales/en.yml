@@ -2,6 +2,18 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  common:
+    show: "Show"
+    edit: "Edit"
+    delete: "Delete"
+    back: "Back"
+    r_u_sure: "Are you sure?"
+    title: "Title"
+    count_questions: "Count questions"
+    action: "Action"
+    question: "Question"
+    new: "New"
+
   helpers:
     submit:
       test:
@@ -9,9 +21,11 @@ en:
         update: "Update test"
     label:
       test:
-        title: "Title_"
-        level: "Level_"
-        category_id: "Category_"
+        title: "Title"
+        level: "Level"
+        category_id: "Category"
+    select:
+      prompt: "Select Category..."
   shared:
     errors:
       header:
@@ -30,6 +44,30 @@ en:
         success: "Test was successfully created."
       index:
         header: "Available tests"
+        new_test: "New Test"
+      new:
+        new_test: "New Test"
+      show:
+        questions: "Questions"
+        body: "Body"
+        new_question: "New Question"
+      edit:
+        edit: "Edit"
+    questions:
+      show:
+        answers: "Answers"
+        new_answer: "New answer"
+    answers:
+      new:
+        new_answer: "New answer"
+      edit:
+        edit_answer: "Edit answer"
+      show:
+        answer: "Answer"
+        correct: "Correct"
+  users:
+    sessions:
+      welcome: "Welcome, %{name}"
 
   tests_mailer:
     completed_test:

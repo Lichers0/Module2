@@ -2,9 +2,17 @@ en:
   activerecord:
     models:
       test: "Test"
+      answer: "Answer"
     attributes:
       test:
         title: "Title"
+      user:
+        first_name: "First Name"
+        last_name: "Last Name"
+      answer:
+        body: "Body"
+        correct: "Correct"
     errors:
       messages:
         blank: "Not empty"
+
