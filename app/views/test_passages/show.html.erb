@@ -1,6 +1,6 @@
 <h1>Passing the <%= @test_passage.test.title %> Test</h1>
 
-<b>
+<b class="form-control mb-5">
   <%= @test_passage.current_question.body %>
 </b>
 
@@ -11,12 +11,12 @@
                                   :body,
                                   include_hidden: false do |b| %>
     <p>
-      <%= b.check_box id: "answer_ids_#{b.object.id}" %>
+      <%= b.check_box id: "answer_ids_#{b.object.id}", class: "checkbox mr-5" %>
       <%= b.label %>
     </p>
   <% end %>
 
   <p>Current question: <%=@test_passage.index_current_question %></p>
   <p>Total question: <%=@test_passage.total_test_questions %></p>
-  <p><%= form.submit "Next" %></p>
+  <p><%= form.submit "Next", class: "btn btn-primary" %></p>
 <% end %>

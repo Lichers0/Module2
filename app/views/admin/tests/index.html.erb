@@ -1,8 +1,9 @@
-<h1><%= t('.header') %></h1>
-<p>
-  <%=link_to t(".new_test"), new_admin_test_path %>
-</p>
-<table>
+<h1 class="mb-5"><%= t('.header') %></h1>
+<a class="btn btn-success" href="<%= new_admin_test_path %>">
+  <%= t(".new_test") %>
+</a>
+
+<table class="table my-5">
   <tr>
     <th>ID</th>
     <th><%= t("common.title") %></th>
