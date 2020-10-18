@@ -1,10 +1,24 @@
-<div class="nav user">
-  <h1><%= link_to "Test Guru", root_path %></h1>
-  <% if user_signed_in? %>
-    Welcome, <b><%= current_user.email %></b> Guru |
-    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Sign up", new_user_registration_path %> |
-    <%= link_to "Log in", new_user_session_path %>
+<div class="navbar navbar-light navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
+  <%= link_to "Test Guru", root_path, class: "navbar-brand" %>
+  <% if current_user&.admin? %>
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <%= link_to "Панель админа", admin_tests_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Тесты", tests_path, class: "nav-link" %>
+        </li>
+      </ul>
+    </div>
   <% end %>
+  <div class="navbar-text">
+    <% if user_signed_in? %>
+      <%= t("users.sessions.welcome", name: " #{current_user.email} Guru") %>
+      <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-outline-primary my-2 my-sm-0" %>
+    <% else %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-outline-primary my-2 my-sm-0" %>
+      <%= link_to "Log in", new_user_session_path, class: "btn btn-outline-primary my-2 my-sm-0" %>
+    <% end %>
+  </div>
 </div>

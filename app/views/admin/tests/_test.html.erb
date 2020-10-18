@@ -2,10 +2,12 @@
   <td><%= test.id  %></td>
   <td><%= test.title %></td>
   <td><%= test.questions.count %></td>
-  <td><%= link_to t("common.show"), admin_test_path(test)  %></td>
-  <td><%= link_to t("common.edit"), edit_admin_test_path(test) %></td>
+  <td>
+    <%= link_to t("common.show"), admin_test_path(test), class: "btn btn-outline-primary" %>
+  </td>
+  <td><%= link_to t("common.edit"), edit_admin_test_path(test), class: "btn btn-outline-primary" %></td>
   <td><%= link_to t("common.delete"),
                   admin_test_path(test),
                   method: :delete,
-                  data: { confirm: t("common.r_u_sure") }  %></td>
+                  data: { confirm: t("common.r_u_sure") }, class: "btn btn-outline-primary"  %></td>
 </tr>

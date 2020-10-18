@@ -8,8 +8,16 @@ module ApplicationHelper
   end
 
   def flash_messages
+    flash_type = { alert: "alert-danger",
+             notice: "alert-primary",
+             notification: "alert-success",
+             other: "alert-dark"
+    }
+
     flash.map do |type, message|
-      content_tag :div, message, class: "flash #{type}"
-    end.join('<br>').html_safe
+      flash_class = flash_type[type.to_sym] || flash_type[:other]
+      content_tag :div, message, class: "alert #{flash_class} my-1"
+    end.join('').html_safe
   end
 end
+
