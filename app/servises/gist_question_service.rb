@@ -13,7 +13,7 @@ class GistQuestionService
 
   def gist_params
     {
-      description: "A question about #{@test.title} from TestGuru",
+      description: I18n.t(".gist_question", title: @test.title),
       files: {
         'test-furu-question.txt' => {
           content: gist_content
@@ -23,8 +23,6 @@ class GistQuestionService
   end
 
   def gist_content
-    content = [@question.body]
-    content += @question.answers.pluck(:body)
-    content.join('\n')
+    [@question.body, @question.answers.pluck(:body)].flatten.join("\n")
   end
 end

@@ -1,0 +1,10 @@
+<h1 class="mb-5"><%= t(".header") %></h1>
+
+<table class="table my-5">
+  <tr class="row">
+    <th class="col-3"> <%= Gist.human_attribute_name(:question_id) %></th>
+    <th class="col-7"> <%= Gist.human_attribute_name(:url) %></th>
+    <th class="col-2"> <%= Gist.human_attribute_name(:user_id) %></th>
+  </tr>
+  <%= render @gists if @gists %>
+</table>

@@ -4,6 +4,10 @@ en:
       test: "Test"
       answer: "Answer"
     attributes:
+      gist:
+        question_id: "Question"
+        user_id: "User"
+        url: "Link"
       test:
         title: "Title"
       user:
@@ -18,4 +22,9 @@ en:
   test_passages:
     show:
       gist_link: "Gist question"
+  gist_question: "Вопрос о %{title} из TestGuru"
+  admin:
+    gists:
+      index:
+        header: "Gists list"
 
