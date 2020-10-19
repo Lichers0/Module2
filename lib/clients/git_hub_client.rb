@@ -17,5 +17,6 @@ class GitHubClient
 
   def setup_http_client
     Faraday.new(url: ROOT_ENDPOINT)
+
   end
 end

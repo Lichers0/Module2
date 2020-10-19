@@ -29,7 +29,8 @@ gem 'devise-i18n'
 gem 'bootstrap'
 gem 'jquery-rails'
 
-gem 'faraday'
+# gem 'faraday'
+gem 'octokit'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
