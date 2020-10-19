@@ -15,4 +15,7 @@ en:
     errors:
       messages:
         blank: "Not empty"
+  test_passages:
+    show:
+      gist_link: "Gist question"
 

@@ -20,7 +20,7 @@ class TestPassagesController < ApplicationController
 
     flash_options =
       if result.success?
-        { notice: t(".success") }
+        { notice: t(".success", url: result.html_url) }
       else
         { notice: t(".failure") }
       end
