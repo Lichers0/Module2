@@ -1,5 +1,5 @@
 class GistQuestionService
-  def initialize (question, client: nil)
+  def initialize (question, client: default_client)
     @question = question
     @test = @question.test
     @client = client || GitHubClient.new
@@ -7,6 +7,14 @@ class GistQuestionService
 
   def call
     @client.create_gist(gist_params)
+  end
+
+  def success?
+    @client&.html_url.present?
+  end
+
+  def link
+    @client.html_url
   end
 
   private
@@ -20,6 +28,10 @@ class GistQuestionService
         }
       }
     }
+  end
+
+  def default_client
+    nil
   end
 
   def gist_content

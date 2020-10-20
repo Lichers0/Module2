@@ -40,7 +40,7 @@ en:
       header: "Test %{title} success!"
     gist:
       failure: "Error when gist try to save"
-      success: "Gist was save url: %{url}"
+      success: "Gist was save url: <a href=\"%{url}\" target=\"_black\"> link </a>"
   admin:
     tests:
       create:
