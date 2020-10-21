@@ -36,6 +36,9 @@ ru:
   test_passages:
     result:
       header: "Тест %{title} успешно завершен!"
+    gist:
+      failure: "Во время сохранения gist произошла ошибка"
+      success: "Gist успешно сохранен url: <a href=\"%{url}\" target=\"_black\"> link </a>"
   admin:
     tests:
       create:

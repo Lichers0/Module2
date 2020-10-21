@@ -16,7 +16,7 @@ module ApplicationHelper
 
     flash.map do |type, message|
       flash_class = flash_type[type.to_sym] || flash_type[:other]
-      content_tag :div, message, class: "alert #{flash_class} my-1"
+      content_tag :div, message.html_safe, class: "alert #{flash_class} my-1"
     end.join('').html_safe
   end
 end
