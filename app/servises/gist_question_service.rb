@@ -2,7 +2,7 @@ class GistQuestionService
   def initialize (question, client: default_client)
     @question = question
     @test = @question.test
-    @client = client || GitHubClient.new
+    @client = client
   end
 
   def call
@@ -31,7 +31,7 @@ class GistQuestionService
   end
 
   def default_client
-    nil
+    GitHubClient.new
   end
 
   def gist_content
