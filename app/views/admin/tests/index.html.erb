@@ -6,7 +6,16 @@
 <table class="table my-5">
   <tr>
     <th>ID</th>
-    <th><%= t("common.title") %></th>
+    <th class="sort-by-title pointer">
+      <%= t("common.title") %>
+
+      <span class="span-arrow-up hide">
+        <%= octicon 'arrow-up', class: "text-success" %>
+      </span>
+      <span class="span-arrow-down hide">
+        <%= octicon 'arrow-down', class: "text-success hide" %>
+      </span>
+    </th>
     <th><%= t("common.count_questions") %></th>
     <th colspan="3"><%= t("common.action") %></th>
   </tr>
