@@ -3,9 +3,18 @@
 <table class="table">
   <tr>
     <th>ID</th>
-    <th>Title</th>
-    <th>Count questions</th>
-    <th>Action</th>
+    <th class="sort-by-title pointer">
+      <%= t("common.title") %>
+
+      <span class="span-arrow-up hide">
+        <%= octicon 'arrow-up', class: "text-success" %>
+      </span>
+      <span class="span-arrow-down hide">
+        <%= octicon 'arrow-down', class: "text-success hide" %>
+      </span>
+    </th>
+    <th><%= t("common.count_questions") %></th>
+    <th><%= t("common.action") %></th>
   </tr>
   <%= render @tests %>
 </table>

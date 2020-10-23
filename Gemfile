@@ -31,6 +31,7 @@ gem 'jquery-rails'
 
 # gem 'faraday'
 gem 'octokit'
+gem 'octicons_helper'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
