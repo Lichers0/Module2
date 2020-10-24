@@ -54,6 +54,8 @@ ru:
         new_question: "Новый вопрос"
       edit:
         edit: "Редактировать"
+      form_inline:
+        submit: "OK"
     questions:
       show:
         answers: "Ответы"
