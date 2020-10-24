@@ -1,7 +1,7 @@
 document.addEventListener('turbolinks:load', function() {
   let controls = document.querySelectorAll('.form-inline-link')
 
-  if (controls.length) {
+  if (controls && controls.length) {
     for (let i = 0; i < controls.length; i++) {
       controls[i].addEventListener('click', formLineLinkHandler)
     }
