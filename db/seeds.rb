@@ -6,23 +6,45 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-users = User.create!([{ name: 'Pasha' }, { name: 'Sasha' }])
+# users = User.create!([{ name: 'Pasha' }, { name: 'Sasha' }])
+user = Admin.create(
+  email: 'admin@admin',
+  password: '123456',
+  first_name: 'Poul',
+  last_name: 'Boss'
+)
 
 categories = Category.create!([
-  { title: 'History' },
+  { title: 'Langueges' },
   { title: 'Maths' }])
 
-test = Test.create!(title: 'Addition', level: 0, category: categories[1], author: users[0])
+test = Test.create!([
+  { title: 'Addition', level: 0, category: categories[1], author: user },
+  { title: 'Multiplication', level: 1, category: categories[1], author: user }])
+
 questions = Question.create!([
-  { body: '2+2=', test: test },
-  { body: '5+5=', test: test }])
+  { body: '2+2=', test: test[0] },
+  { body: '5+5=', test: test[0] },
+  { body: '2*2=', test: test[1] },
+  { body: '5*5=', test: test[1] }])
+
 Answer.create!([
-  { body: '1', correct: false, question: questions[0] },
-  { body: '2', correct: false, question: questions[0] },
-  { body: '3', correct: false, question: questions[0] },
-  { body: '4', correct: true, question: questions[0] }])
-Answer.create!([
-  { body: '1', correct: false, question: questions[1] },
-  { body: '4', correct: false, question: questions[1] },
-  { body: '5', correct: false, question: questions[1] },
-  { body: '10', correct: true, question: questions[1] }])
+  { body: '1',  correct: false, question: questions[0] },
+  { body: '2',  correct: false, question: questions[0] },
+  { body: '3',  correct: false, question: questions[0] },
+  { body: '4',  correct: true,  question: questions[0] },
+
+  { body: '1',  correct: false, question: questions[1] },
+  { body: '4',  correct: false, question: questions[1] },
+  { body: '5',  correct: false, question: questions[1] },
+  { body: '10', correct: true,  question: questions[1] },
+
+  { body: '1',  correct: false, question: questions[2] },
+  { body: '2',  correct: false, question: questions[2] },
+  { body: '3',  correct: false, question: questions[2] },
+  { body: '4',  correct: true,  question: questions[2] },
+
+  { body: '25', correct: true,  question: questions[3] },
+  { body: '4',  correct: false, question: questions[3] },
+  { body: '5',  correct: false, question: questions[3] },
+  { body: '10', correct: false, question: questions[3] }])
