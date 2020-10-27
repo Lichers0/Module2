@@ -3,7 +3,6 @@ document.addEventListener(
   function() {
     let control = document.querySelector('.sort-by-title');
     if (control) { control.addEventListener('click', sortByTitle) }
-    console.log(133)
   })
 
 function sortByTitle() {

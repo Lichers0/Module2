@@ -1,4 +1,7 @@
 ru:
+  form_inline:
+    cancel: "Выход"
+    edit: "Редактировать"
   common:
     show: "Показать"
     edit: "Редактировать"
@@ -30,6 +33,12 @@ ru:
         many: "Обнаружено %{count} ошибк"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+    header:
+      menu:
+        admin_panel: "Панель админа"
+        tests: "Тесты"
+        gist: "Список gist"
+      logout: "Выход"
   test:
     index:
       header: "Доступные тесты"

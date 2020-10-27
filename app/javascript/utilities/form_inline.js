@@ -25,16 +25,16 @@ function formInlineHandler(testId) {
   let link = document.querySelector(`.form-inline-link[data-test-id="${ testId }"]`)
 
   let testTitle = document.querySelector(`.test-title[data-test-id="${ testId }"]`)
-  let formInline = document.querySelector(`.form-inline2[data-test-id="${ testId }"]`)
+  let formInline = document.querySelector(`.form-inline[data-test-id="${ testId }"]`)
 
 
   if (formInline.classList.contains('hide')) {
     testTitle.classList.add('hide')
     formInline.classList.remove('hide')
-    link.textContent = 'Cancel'
+    link.textContent = "Отмена"
   } else {
     formInline.classList.add('hide')
     testTitle.classList.remove('hide')
-    link.textContent = 'Edit'
+    link.textContent = "Редактировать"
   }
 }
