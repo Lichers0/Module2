@@ -39,6 +39,8 @@ ru:
         tests: "Тесты"
         gist: "Список gist"
       logout: "Выход"
+      sign_up: "Зарегистрироваться"
+      log_in: "Войти"
   test:
     index:
       header: "Доступные тесты"

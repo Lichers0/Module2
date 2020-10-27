@@ -40,6 +40,8 @@ en:
         tests: "Tests"
         gist: "Gist list"
       logout: "Log out"
+      sign_up: "Sign up"
+      log_in: "Log in"
 
   test:
     index:
