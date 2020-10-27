@@ -11,7 +11,8 @@ user = Admin.create(
   email: 'admin@admin',
   password: '123456',
   first_name: 'Poul',
-  last_name: 'Boss'
+  last_name: 'Boss',
+  confirmed_at: Time.now
 )
 
 categories = Category.create!([
