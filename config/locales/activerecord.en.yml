@@ -27,4 +27,13 @@ en:
     gists:
       index:
         header: "Gists list"
+  feedback:
+    new:
+      send: "Send"
+      title: "Title"
+      body: "Text feedback"
+    submit:
+      success: "Feedback sent"
+  feedback_mailer:
+    subject: "Feedback from Test Guru"
 
