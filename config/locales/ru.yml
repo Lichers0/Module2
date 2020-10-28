@@ -96,3 +96,5 @@ ru:
       success: "Успешно отправлено"
   feedback_mailer:
     subject: "Обратная связь от Test Guru"
+    send_feedback:
+        subject: "Обратная связь от Test Guru "

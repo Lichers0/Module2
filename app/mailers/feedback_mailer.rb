@@ -4,6 +4,6 @@ class FeedbackMailer < ApplicationMailer
     @title = title
     @body = body
     admin_list = Admin.all.pluck(:email).join(',')
-    mail to: admin_list, subject: t(".feedback_mailer.subject")
+    mail to: admin_list, subject: t(".subject")
   end
 end

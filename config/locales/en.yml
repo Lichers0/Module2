@@ -89,3 +89,5 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completes the TestGuru test!"
+      send_feedback:
+        subject: "Feedback from Test Guru "
