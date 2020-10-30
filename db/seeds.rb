@@ -8,7 +8,7 @@
 
 # users = User.create!([{ name: 'Pasha' }, { name: 'Sasha' }])
 user = Admin.create(
-  email: 'admin@admin',
+  email: 'infodvd@rambler.ru',
   password: '123456',
   first_name: 'Poul',
   last_name: 'Boss',

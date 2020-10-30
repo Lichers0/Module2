@@ -9,7 +9,7 @@ class FeedbackController < ApplicationController
   def submit
     @feedback = Feedback.new(feedback_params)
     if @feedback.valid?
-      FeedbackMailer.send_feedback(params[:email], params[:title], params[:body]).deliver_now
+      FeedbackMailer.send_feedback(@feedback.email, @feedback.title, @feedback.body).deliver_now
       redirect_to root_path, notice: t(".success")
     else
       full_list = "<ul>"
