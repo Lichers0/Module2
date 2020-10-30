@@ -32,7 +32,8 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.perform_deliveries = true
   #
   # config.action_mailer.perform_caching = false
   #
@@ -43,11 +44,12 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'testguru111.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:            'smtp.gmail.com',
-    port:                            587,
+    address:            'tisza.hostven02.ru',
+    port:                            465,
+    ssl: true,
     user_name:      ENV['SMTP_USERNAME'],
     password:       ENV['SMTP_PASSWORD'],
-    authentication:              'plain',
+    authentication:              :plain,
     enable_starttls_auto:            true
   }
 
