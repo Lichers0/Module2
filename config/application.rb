@@ -25,5 +25,9 @@ module TestGuru
 
     #Load this catalog only (without subdir)
     config.autoload_paths << "#{Rails.root}/lib/clients"
+
+    config.action_view.field_error_proc = Proc.new { |html_tag, instance|
+      html_tag
+    }
   end
 end

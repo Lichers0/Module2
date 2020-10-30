@@ -17,18 +17,16 @@ class TestPassagesController < ApplicationController
 
   def gist
     service = GistQuestionService.new(@test_passage.current_question)
-    service.call
+    result = service.call
 
-    if service.success?
-      link = service.link
-      Gist.create(user: current_user,
-                  question: @test_passage.current_question,
-                  url: link)
-      flash[:notice] = t(".success", url: link)
-    else
-      flash[:notice] = t(".failure")
-    end
-
+    link = result.html_url
+    Gist.create(user: current_user,
+                question: @test_passage.current_question,
+                url: link)
+    flash[:notice] = t(".success", url: link)
+  rescue StandardError => e
+    flash[:notice] = t(".failure", error: e.message)
+  ensure
     redirect_to @test_passage
   end
 

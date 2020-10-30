@@ -51,7 +51,7 @@ en:
     result:
       header: "Test %{title} success!"
     gist:
-      failure: "Error when gist try to save"
+      failure: "Error when gist try to save: %{error}"
       success: "Gist was save url: <a href=\"%{url}\" target=\"_black\"> link </a>"
   admin:
     tests:

@@ -9,12 +9,14 @@ class GistQuestionService
     @result = @client.create_gist(gist_params)
   end
 
-  def success?
-    @result&.html_url.present?
-  end
+  def make_gist(service)
+    git_response = service.call
 
-  def link
-    @result.html_url
+    current_user.gists.create(question: @test_passage.current_question,
+                              url: git_response.html_url)
+    flash[:gist_create] = git_response.html_url
+  rescue StandardError => e
+    flash[:alert] = "#{t('.failure')}. #{t('.error_reason')}: #{e.response_status}"
   end
 
   private

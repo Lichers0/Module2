@@ -34,6 +34,8 @@ gem 'jquery-rails'
 gem 'octokit'
 gem 'octicons_helper'
 
+gem "config"
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

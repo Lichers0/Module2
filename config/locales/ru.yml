@@ -49,7 +49,7 @@ ru:
     result:
       header: "Тест %{title} успешно завершен!"
     gist:
-      failure: "Во время сохранения gist произошла ошибка"
+      failure: "Во время сохранения gist произошла ошибка: %{error}"
       success: "Gist успешно сохранен url: <a href=\"%{url}\" target=\"_black\"> link </a>"
   admin:
     tests:
@@ -94,6 +94,7 @@ ru:
       body: "Текст"
     submit:
       success: "Успешно отправлено"
+      correct_email: "Введите корректный емейл"
   feedback_mailer:
     subject: "Обратная связь от Test Guru"
     send_feedback:

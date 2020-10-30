@@ -34,6 +34,7 @@ en:
       body: "Text feedback"
     submit:
       success: "Feedback sent"
+      correct_email: "Enter valid email"
   feedback_mailer:
     subject: "Feedback from Test Guru"
 

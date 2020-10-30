@@ -16,6 +16,12 @@ ru:
       answer:
         body: "Текст"
         correct: "Правильный"
+  activemodel:
+    attributes:
+      feedback:
+        email: "Почта"
+        title: "Заголовок"
+        body: "Текст"
     errors:
       messages:
         blank: "Не может быть пустым"

@@ -14,7 +14,6 @@ document.addEventListener('turbolinks:load', function() {
   }
 })
 
-// 23 minutes
 function formLineLinkHandler(event) {
   event.preventDefault()
   let testId = this.dataset.testId
@@ -33,6 +32,8 @@ function formInlineHandler(testId) {
     formInline.classList.remove('hide')
     link.textContent = "Отмена"
   } else {
+    let title = formInline.querySelector("#test_title")
+    title.value = formInline.dataset.value
     formInline.classList.add('hide')
     testTitle.classList.remove('hide')
     link.textContent = "Редактировать"

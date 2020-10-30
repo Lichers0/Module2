@@ -1,9 +1,10 @@
 class FeedbackMailer < ApplicationMailer
-  def send_feedback(user_id, title, body)
-    @user = User.find(user_id)
+  default to: -> { Admin.pluck(:email) }
+
+  def send_feedback(user, title, body)
+    @user = user
     @title = title
     @body = body
-    admin_list = Admin.all.pluck(:email).join(',')
-    mail to: admin_list, subject: t(".subject")
+    mail subject: t(".subject")
   end
 end
