@@ -37,4 +37,8 @@ en:
       correct_email: "Enter valid email"
   feedback_mailer:
     subject: "Feedback from Test Guru"
+  users:
+    registrations:
+      create:
+        confirm_email: "Sent email. Confirm registration."
 

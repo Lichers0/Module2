@@ -54,7 +54,7 @@ ru:
   admin:
     tests:
       create:
-        seccess: "Тест создан"
+        success: "Тест создан"
       index:
         header: "Доступные тесты"
         new_test: "Новый Test"

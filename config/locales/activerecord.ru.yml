@@ -33,3 +33,7 @@ ru:
     gists:
       index:
         header: "Список gist"
+  users:
+    registrations:
+      create:
+        confirm_email: "Подтвердите регистрацию. Письмо отправлено на электронную почту."
