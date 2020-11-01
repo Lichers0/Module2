@@ -3,6 +3,13 @@ en:
     models:
       test: "Test"
       answer: "Answer"
+      user: "User"
+      test_passage: "Test passage"
+      question: "Question"
+      gist: "Gits"
+      feedback: "Feedback"
+      category: "Category"
+      admin: "Admin"
     attributes:
       gist:
         question_id: "Question"

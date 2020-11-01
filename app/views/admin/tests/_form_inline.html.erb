@@ -1,22 +1,3 @@
-<%
-  # # хорошо
-  # def send_mail(source)
-  #   Mailer.deliver(to: 'bob@example.com',
-  #                  from: 'us@example.com',
-  #                  subject: 'Important message',
-  #                  body: source.text)
-  # end
-  #
-  # # хорошо (одинарный отступ)
-  # def send_mail(source)
-  #   Mailer.deliver(
-  #     to: 'bob@example.com',
-  #     from: 'us@example.com',
-  #     subject: 'Important message',
-  #     body: source.text
-  #   )
-  # end
-%>
 <%=form_with model: [:admin, test],
              url: update_inline_admin_test_path(test),
              local: true,

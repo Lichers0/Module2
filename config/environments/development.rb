@@ -44,7 +44,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'testguru111.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:            'tisza.hostven02.ru',
+    address:        ENV['SMTP_ADDRESS'],
     port:                            465,
     ssl: true,
     user_name:      ENV['SMTP_USERNAME'],

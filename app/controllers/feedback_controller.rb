@@ -8,16 +8,9 @@ class FeedbackController < ApplicationController
 
   def submit
     @feedback = Feedback.new(feedback_params)
-    if @feedback.valid?
-      FeedbackMailer.send_feedback(@feedback.email, @feedback.title, @feedback.body).deliver_now
-      redirect_to root_path, notice: t(".success")
+    if FeedbackService.new(@feedback).valid?
+      redirect_to new_user_session_path, notice: t(".success")
     else
-      full_list = "<ul>"
-      @feedback.errors.full_messages.each do |message|
-        full_list += "\n<li>#{message}</li>"
-      end
-      full_list += "</ul>"
-      flash[:alert] = full_list
       render :new
     end
   end
@@ -27,5 +20,4 @@ class FeedbackController < ApplicationController
   def feedback_params
     params.require(:feedback).permit(:title, :body, :email)
   end
-
 end

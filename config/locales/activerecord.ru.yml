@@ -3,6 +3,13 @@ ru:
     models:
       test: "Тест"
       answer: "Ответ"
+      user: "Пользователь"
+      test_passage: "Прохождение теста"
+      question: "Вопрос"
+      gist: "Gits"
+      feedback: "Обратная связь"
+      category: "Категория"
+      admin: "Администратор"
     attributes:
       gist:
         question_id: "Вопрос"
