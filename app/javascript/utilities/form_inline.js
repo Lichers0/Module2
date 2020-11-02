@@ -5,16 +5,14 @@ document.addEventListener('turbolinks:load', function() {
     for (let i = 0; i < controls.length; i++) {
       controls[i].addEventListener('click', formLineLinkHandler)
     }
-  }
-
-  let errors = document.querySelector('.resource-errors')
-  if (errors) {
-    let resourceId = errors.dataset.resourceId
-    formInlineHandler(resourceId)
+    let errors = document.querySelector('.resource-errors')
+    if (errors) {
+      let resourceId = errors.dataset.resourceId
+      formInlineHandler(resourceId)
+    }
   }
 })
 
-// 23 minutes
 function formLineLinkHandler(event) {
   event.preventDefault()
   let testId = this.dataset.testId
@@ -25,16 +23,18 @@ function formInlineHandler(testId) {
   let link = document.querySelector(`.form-inline-link[data-test-id="${ testId }"]`)
 
   let testTitle = document.querySelector(`.test-title[data-test-id="${ testId }"]`)
-  let formInline = document.querySelector(`.form-inline2[data-test-id="${ testId }"]`)
+  let formInline = document.querySelector(`.form-inline[data-test-id="${ testId }"]`)
 
 
   if (formInline.classList.contains('hide')) {
     testTitle.classList.add('hide')
     formInline.classList.remove('hide')
-    link.textContent = 'Cancel'
+    link.textContent = "Отмена"
   } else {
+    let title = formInline.querySelector("#test_title")
+    title.value = formInline.dataset.value
     formInline.classList.add('hide')
     testTitle.classList.remove('hide')
-    link.textContent = 'Edit'
+    link.textContent = "Редактировать"
   }
 }

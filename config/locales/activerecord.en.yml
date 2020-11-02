@@ -3,6 +3,13 @@ en:
     models:
       test: "Test"
       answer: "Answer"
+      user: "User"
+      test_passage: "Test passage"
+      question: "Question"
+      gist: "Gits"
+      feedback: "Feedback"
+      category: "Category"
+      admin: "Admin"
     attributes:
       gist:
         question_id: "Question"
@@ -27,4 +34,18 @@ en:
     gists:
       index:
         header: "Gists list"
+  feedback:
+    new:
+      send: "Send"
+      title: "Title"
+      body: "Text feedback"
+    submit:
+      success: "Feedback sent"
+      correct_email: "Enter valid email"
+  feedback_mailer:
+    subject: "Feedback from Test Guru"
+  users:
+    registrations:
+      create:
+        confirm_email: "Sent email. Confirm registration."
 

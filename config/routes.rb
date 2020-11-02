@@ -12,8 +12,11 @@ Rails.application.routes.draw do
                  registrations: "users/registrations"
              }
 
-  resources :tests, only: :index do
+  resources :feedback, only: :new do
+    post :submit, on: :collection
+  end
 
+  resources :tests, only: :index do
     post :start, on: :member
   end
 
@@ -34,4 +37,5 @@ Rails.application.routes.draw do
     end
     resources :gists, only: :index
   end
+
 end

@@ -1,4 +1,7 @@
 ru:
+  form_inline:
+    cancel: "Выход"
+    edit: "Редактировать"
   common:
     show: "Показать"
     edit: "Редактировать"
@@ -30,6 +33,15 @@ ru:
         many: "Обнаружено %{count} ошибк"
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
+    header:
+      menu:
+        admin_panel: "Панель админа"
+        tests: "Тесты"
+        gist: "Список gist"
+      logout: "Выход"
+      sign_up: "Зарегистрироваться"
+      log_in: "Войти"
+      feedback: "Форма обратной связи"
   test:
     index:
       header: "Доступные тесты"
@@ -37,12 +49,12 @@ ru:
     result:
       header: "Тест %{title} успешно завершен!"
     gist:
-      failure: "Во время сохранения gist произошла ошибка"
+      failure: "Во время сохранения gist произошла ошибка: %{error}"
       success: "Gist успешно сохранен url: <a href=\"%{url}\" target=\"_black\"> link </a>"
   admin:
     tests:
       create:
-        seccess: "Тест создан"
+        success: "Тест создан"
       index:
         header: "Доступные тесты"
         new_test: "Новый Test"
@@ -75,3 +87,15 @@ ru:
   tests_mailer:
     completed_test:
       subject: "Вы успешно завершили тест на TestGuru!"
+  feedback:
+    new:
+      send: "Отправить"
+      title: "Заголовок"
+      body: "Текст"
+    submit:
+      success: "Успешно отправлено"
+      correct_email: "Введите корректный емейл"
+  feedback_mailer:
+    subject: "Обратная связь от Test Guru"
+    send_feedback:
+        subject: "Обратная связь от Test Guru "

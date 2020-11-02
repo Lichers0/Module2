@@ -2,6 +2,9 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
+  form_inline:
+    cancel: "Cancel"
+    edit: "Edit"
   common:
     show: "Show"
     edit: "Edit"
@@ -31,6 +34,15 @@ en:
       header:
         one: "%{count} error detected"
         other: "%{count} errors detected"
+    header:
+      menu:
+        admin_panel: "Admin panel"
+        tests: "Tests"
+        gist: "Gist list"
+      logout: "Log out"
+      sign_up: "Sign up"
+      log_in: "Log in"
+      feedback: "Feedback"
 
   test:
     index:
@@ -39,7 +51,7 @@ en:
     result:
       header: "Test %{title} success!"
     gist:
-      failure: "Error when gist try to save"
+      failure: "Error when gist try to save: %{error}"
       success: "Gist was save url: <a href=\"%{url}\" target=\"_black\"> link </a>"
   admin:
     tests:
@@ -77,3 +89,5 @@ en:
   tests_mailer:
     completed_test:
       subject: "You just completes the TestGuru test!"
+      send_feedback:
+        subject: "Feedback from Test Guru "
