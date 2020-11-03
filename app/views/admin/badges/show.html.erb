@@ -1,0 +1,19 @@
+<h1><%= t("common.show") %>:</h1>
+<table class="table my-3">
+  <tr>
+    <th><%= t("common.title") %> : </th>
+    <td><%= @badge.title %></td>
+  </tr>
+  <tr>
+    <th><%= t("badges.index.picture") %> : </th>
+    <td><%= image_tag((@badge.picture),
+                      size: "100x100",
+                      class: 'rounded-circle') %>
+    </td>
+  </tr>
+</table>
+
+<%= link_to t("common.edit"), edit_admin_badge_path(@badge), class: "btn btn-primary" %>
+
+<br><br>
+<%= link_to t("common.back"), admin_badges_path, class: "btn btn-primary" %>

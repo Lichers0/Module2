@@ -42,6 +42,7 @@ ru:
       sign_up: "Зарегистрироваться"
       log_in: "Войти"
       feedback: "Форма обратной связи"
+      badge: "Награды"
   test:
     index:
       header: "Доступные тесты"
@@ -99,3 +100,6 @@ ru:
     subject: "Обратная связь от Test Guru"
     send_feedback:
         subject: "Обратная связь от Test Guru "
+  badges:
+    index:
+      picture: "Картинка"

@@ -10,13 +10,26 @@
           <%= link_to t(".menu.tests"), tests_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
+          <%= link_to t(".badge"), admin_badges_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
           <%= link_to t(".menu.gist"), admin_gists_path, class: "nav-link" %>
         </li>
+      </ul>
+    </div>
+  <% elsif current_user %>
+    <div class="collapse navbar-collapse">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <%= link_to t(".menu.tests"), tests_path, class: "nav-link" %>
+        </li>
+
         <li class="nav-item">
           <%= link_to t(".feedback"), new_feedback_path, class: "nav-link" %>
         </li>
       </ul>
     </div>
+
   <% else %>
     <div class="collapse navbar-collapse">
       <ul class="nav nav-tabs">

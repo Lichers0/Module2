@@ -34,6 +34,12 @@ en:
     gists:
       index:
         header: "Gists list"
+    badges:
+      form:
+        select_type_rele: "Select type rule:"
+      index:
+        header: "Badge"
+        new_badge: "New badge"
   feedback:
     new:
       send: "Send"
@@ -48,4 +54,10 @@ en:
     registrations:
       create:
         confirm_email: "Sent email. Confirm registration."
+  badges:
+    index:
+      picture: "Picture"
+  category_not_found: "Category not found"
+  test_name_not_found: "Test name not found"
+  incorrect_rule: "Incorrect rule"
 

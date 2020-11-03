@@ -1,0 +1,15 @@
+<h1 class="mb-5"><%= t('.header') %></h1>
+<a class="btn btn-success" href="<%= new_admin_badge_path %>">
+  <%= t(".new_badge") %>
+</a>
+<%= render "shared/errors", resource: @badge %>
+<table class="table my-5">
+  <tr>
+    <th class="sort-by-title pointer">
+      <%= t("common.title") %>
+    </th>
+    <th colspan="3"><%= t("common.action") %></th>
+  </tr>
+  <%= render @badges %>
+</table>
+
