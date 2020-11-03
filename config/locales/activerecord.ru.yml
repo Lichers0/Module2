@@ -17,6 +17,7 @@ ru:
         url: "Ссылка"
       test:
         title: "Название"
+        timeleft: "Таймер"
       user:
         first_name: "Имя"
         last_name: "Фамилия"

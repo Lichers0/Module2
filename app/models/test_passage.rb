@@ -7,8 +7,13 @@ class TestPassage < ApplicationRecord
 
   before_validation :before_validation_set_first_question
 
+
   def completed?
-    current_question.nil?
+    self.current_question.nil?
+  end
+
+  def complete
+    self.current_question = nil
   end
 
   def accept!(answer_ids)
@@ -35,6 +40,14 @@ class TestPassage < ApplicationRecord
     test.questions.count
   end
 
+  def time_is_over?
+    expires_time < Time.current
+  end
+
+  def timer_seconds
+    (expires_time - Time.current).to_i
+  end
+
   private
 
   def before_validation_set_first_question
@@ -42,9 +55,6 @@ class TestPassage < ApplicationRecord
   end
 
   def correct_answer?(answer_ids)
-    # correct_answers_count = correct_answers.count
-    # correct_answers_count == correct_answers.where(id: answer_ids).count &&
-    #     correct_answers_count == answer_ids.count
     correct_answers.ids.sort == answer_ids&.map(&:to_i)&.sort
   end
 
@@ -55,4 +65,9 @@ class TestPassage < ApplicationRecord
   def next_question
     test.questions.order(:id).where('id > ?', current_question.id).first
   end
+
+  def expires_time
+    created_at + test.timeleft.minutes
+  end
+
 end

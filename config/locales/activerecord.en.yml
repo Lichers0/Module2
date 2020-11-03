@@ -17,6 +17,7 @@ en:
         url: "Link"
       test:
         title: "Title"
+        timeleft: "Timer"
       user:
         first_name: "First Name"
         last_name: "Last Name"
