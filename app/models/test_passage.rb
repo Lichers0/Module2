@@ -9,11 +9,7 @@ class TestPassage < ApplicationRecord
 
 
   def completed?
-    self.current_question.nil?
-  end
-
-  def complete
-    self.current_question = nil
+    self.current_question.nil? || time_is_over?
   end
 
   def accept!(answer_ids)
@@ -40,22 +36,22 @@ class TestPassage < ApplicationRecord
     test.questions.count
   end
 
-  def time_is_over?
-    expires_time < Time.current
-  end
-
   def timer_seconds
     (expires_time - Time.current).to_i
   end
 
   private
 
+  def time_is_over?
+    expires_time < Time.current
+  end
+
   def before_validation_set_first_question
     self.current_question = new_record? ? test.questions.first : next_question
   end
 
   def correct_answer?(answer_ids)
-    correct_answers.ids.sort == answer_ids&.map(&:to_i)&.sort
+    correct_answers&.ids.sort == answer_ids&.map(&:to_i)&.sort
   end
 
   def correct_answers
@@ -67,7 +63,7 @@ class TestPassage < ApplicationRecord
   end
 
   def expires_time
-    created_at + test.timeleft.minutes
+    created_at + test.timerleft.minutes
   end
 
 end

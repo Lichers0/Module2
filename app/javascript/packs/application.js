@@ -14,4 +14,5 @@ import '../utilities/sorting'
 import '../utilities/pass_checking'
 import '../utilities/form_inline'
 import '../utilities/progress_bar'
+import '../utilities/timer'
 import "../../assets/stylesheets/application.scss"

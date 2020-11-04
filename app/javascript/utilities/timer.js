@@ -1,8 +1,9 @@
 document.addEventListener('turbolinks:load', function() {
-  let timerSeconds = document.querySelector('.timer')
+  const timerSeconds = document.getElementsByClassName('js-timer')
+  console.log(timerSeconds.dataset)
 
-  if (timerSeconds) {
-    let time = timerSeconds.dataset.timeleft
+  if (timerSeconds.length) {
+    let time = timerSeconds[0].dataset.timeleft
 
     setInterval(function () {
       if (time > 0) {
@@ -11,7 +12,8 @@ document.addEventListener('turbolinks:load', function() {
         alert('Время вышло')
         document.querySelector('form').submit()
       }
-      timerSeconds.innerHTML = parseInt(time / 60) + ':' + time % 60
+      console.log(parseInt(time / 60) + ':' + time % 60)
+      timerSeconds[0].innerHTML = parseInt(time / 60) + ':' + time % 60
     }, 1000)
   }
 })
