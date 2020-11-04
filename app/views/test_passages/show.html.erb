@@ -28,6 +28,12 @@
     <% end %>
   </div>
 
+  <div>
+    <%= content_tag :span, '',
+                    class: 'js-timer',
+                    data: { timeleft: @test_passage.timer_seconds } %>
+  </div>
+
   <p><%= link_to t(".gist_link"), gist_test_passage_path(@test_passage), method: :post %></p>
   <p><%= form.submit "Next", class: "btn btn-primary" %></p>
 <% end %>
