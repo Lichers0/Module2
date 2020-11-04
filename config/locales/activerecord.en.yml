@@ -1,5 +1,11 @@
 en:
   activerecord:
+    enums:
+      badge:
+        type_rule:
+          all_tests_category: "All tests by category"
+          first_try_passed: "First try passed"
+          all_tests_level: "All tests by level"
     models:
       test: "Test"
       answer: "Answer"

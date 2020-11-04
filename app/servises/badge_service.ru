@@ -7,7 +7,7 @@ class BadgeService
   def call
     return unless @test_passage.passed
     Badge.find_each do |badge|
-      @user.add_badge(badge) if send("can_add_#{badge.type}?(badge.param)")
+      @user.add_badge(badge) if send("can_add_#{badge.type_rule}?(badge.rule_param)")
     end
   end
 
@@ -15,10 +15,10 @@ class BadgeService
 
   #all_tests_category first_try_passed all_tests_level
 
-  def can_add_all_tests_category?(category_name)
-    category = Category.find_by(title: category_name)
+  def can_add_all_tests_category?(category_id)
+    category = Category.find(category_id)
 
-    return false unless @test_passage.test.category_id == category.id
+    return false if @test_passage.test.category_id != category.id
 
     uniq_tests_passed = @user.passed_tests_by_category(category).distinct.count
     category.tests.count == uniq_tests_passed

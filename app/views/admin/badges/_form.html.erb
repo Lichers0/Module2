@@ -9,8 +9,8 @@
     <%=f.text_field :picture, class: "form-control col col-lg-4" %>
   </div>
   <div class="row form-group">
-    <%=f.label :rule, class: "col-sm-2 col-form-label" %>
-    <%=f.select :rule,
+    <%=f.label :type_rule, class: "col-sm-2 col-form-label" %>
+    <%=f.select :type_rule,
                 options_for_enum(@badge, :type_rule, :all_test_category),
                 { class: "form-control col col-lg-4" } %>
   </div>

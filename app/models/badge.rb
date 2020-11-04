@@ -1,7 +1,7 @@
 class Badge < ApplicationRecord
   enum type_rule: %i[all_tests_category first_try_passed all_tests_level]
 
-  has_many :user_badges
+  has_many :user_badges, dependent: :destroy
   has_many :users, through: :user_badges
 
   validates :title, :rule, presence: true
@@ -18,7 +18,7 @@ class Badge < ApplicationRecord
   end
 
   def valid_all_tests_category!
-    errors.add(:rule_param, t(".category_not_found")) unless Category.find_by(title: rule_param)
+    errors.add(:rule_param, t(".category_not_found")) unless Category.find(rule_param)
   end
 
   def valid_first_try_passed!

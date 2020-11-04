@@ -1,5 +1,11 @@
 ru:
   activerecord:
+    enums:
+      badge:
+        type_rule:
+          all_tests_category: "Все тесты категории"
+          first_try_passed: "Тест с первого раза"
+          all_tests_level: "Все тесты уровня"
     models:
       test: "Тест"
       answer: "Ответ"
