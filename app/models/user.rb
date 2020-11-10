@@ -37,15 +37,16 @@ class User < ApplicationRecord
     test_passages.where(passed: true)
   end
 
-  def passed_tests_by_category(category)
-    passed_tests.where(category: category)
-  end
-
-  def passed_tests_by_level(level)
-    passed_tests.where(level: level)
-  end
 
   def add_badge(badge)
     badges << badge
+  end
+
+  def count_badge(badge)
+    badges.where(id: badge.id).count ||= 0
+  end
+
+  def count_passed(test)
+    test_passages.where(test: test, passed: true).count ||= 0
   end
 end
