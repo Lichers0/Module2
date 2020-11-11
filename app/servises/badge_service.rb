@@ -18,27 +18,30 @@ class BadgeService
   #all_tests_category first_try_passed all_tests_level
   # def can_add_all_tests_category?(category_id)
   def can_add_all_tests_category?(badge)
-    category_id = badge.rule_param
-    category = Category.find(category_id)
+    category_id = badge.rule_param.to_i
 
-    return false if @test_passage.test.category_id != category.id
+    return false if @test_passage.test.category_id != category_id
 
     count_current_badge = @user.count_badge(badge)
-    category.tests.each do |test|
+    Test.where(category_id: category_id).each do |test|
       return false unless @user.count_passed(test) > count_current_badge
     end
 
     true
   end
 
-  def can_add_first_try_passed?(test_title)
-    if @test_passage.test.title == test_title && @test_passage.passed
-      @user.tests.where(title: test_title).count == 1
-    end
+  def can_add_first_try_passed?(badge)
+    test_title = badge.rule_param
+
+    return false if @test.title != test_title
+
+    @test_passage.passed && @user.tests.where(title: test_title).count == 1
   end
 
-  def can_add_all_tests_level?(level)
-    return false if @test_passage.test.level != level
+  def can_add_all_tests_level?(badge)
+    level = badge.rule_param.to_i
+
+    return false if @test.level != level
 
     count_current_badge = @user.count_badge(badge)
     Test.where(level: level).each do |test|

@@ -13,7 +13,7 @@ class Badge < ApplicationRecord
 
   def rule_validate
     send("valid_#{type_rule}!")
-  rescue StandardError => e
+  rescue ActiveRecord::RecordNotFound => e
     errors.add(:type_rule, I18n.t(".incorrect_rule"))
   end
 
@@ -25,7 +25,5 @@ class Badge < ApplicationRecord
     errors.add(:rule_param, I18n.t(".test_name_not_found")) unless Test.find_by(title: rule_param)
   end
 
-  def valid_all_tests_level!
-
-  end
+  def valid_all_tests_level!; end
 end
