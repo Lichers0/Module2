@@ -43,6 +43,7 @@ en:
       sign_up: "Sign up"
       log_in: "Log in"
       feedback: "Feedback"
+      badge: "Badge"
 
   test:
     index:

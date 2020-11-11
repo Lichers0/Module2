@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :tests, through: :test_passages, dependent: :destroy
   has_many :tests_authors, class_name: "Test", foreign_key: :author_id, dependent: :destroy
   has_many :gists, dependent: :destroy
+  has_many :user_badges, dependent: :destroy
+  has_many :badges, through: :user_badges, dependent: :destroy
 
   devise :database_authenticatable,
          :registerable,
@@ -29,5 +31,22 @@ class User < ApplicationRecord
 
   def full_name
     [first_name, last_name].join(' ')
+  end
+
+  def passed_tests
+    test_passages.where(passed: true)
+  end
+
+
+  def add_badge(badge)
+    badges << badge
+  end
+
+  def count_badge(badge)
+    badges.where(id: badge.id).count ||= 0
+  end
+
+  def count_passed(test)
+    test_passages.where(test: test, passed: true).count ||= 0
   end
 end

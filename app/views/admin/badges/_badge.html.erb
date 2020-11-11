@@ -1,0 +1,17 @@
+<tr>
+  <td class="align-middle">
+    <%= content_tag :span, badge.title %>
+  </td>
+  <td class="align-middle">
+    <%= link_to t("common.show"), admin_badge_path(badge), class: "btn btn-outline-primary" %>
+  </td>
+  <td class="align-middle">
+    <%= link_to t("common.edit"),
+                edit_admin_badge_path(badge),
+                class: "btn btn-outline-primary" %>
+  </td>
+  <td class="align-middle"><%= link_to t("common.delete"),
+                  admin_badge_path(badge),
+                  method: :delete,
+                  data: { confirm: t("common.r_u_sure") }, class: "btn btn-outline-primary"  %></td>
+</tr>

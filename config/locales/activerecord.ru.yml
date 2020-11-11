@@ -1,5 +1,11 @@
 ru:
   activerecord:
+    enums:
+      badge:
+        type_rule:
+          all_tests_category: "Все тесты категории"
+          first_try_passed: "Тест с первого раза"
+          all_tests_level: "Все тесты уровня"
     models:
       test: "Тест"
       answer: "Ответ"
@@ -40,7 +46,16 @@ ru:
     gists:
       index:
         header: "Список gist"
+    badges:
+      form:
+        select_type_rele: "Выбери тип правила:"
+      index:
+        header: "Награды"
+        new_badge: "Новая награда"
   users:
     registrations:
       create:
         confirm_email: "Подтвердите регистрацию. Письмо отправлено на электронную почту."
+  category_not_found: "Категория не найдена"
+  test_name_not_found: "Тест с таким именем не найден"
+  incorrect_rule: "Выбрано ошибочное правило"
